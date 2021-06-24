@@ -1,0 +1,24 @@
+{
+    "name": "RocketQ",
+    "version": "1.0.0",
+    "description": "Projeto desenvolvido para gerenciar perguntas anonimas em salas especificas, NLW06-DISCOVER",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Fernnandez/RocketQ-nlw06.git"
+    },
+    "keywords": [],
+    "author": "Angelo Fernandes",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Fernnandez/RocketQ-nlw06/issues"
+    },
+    "homepage": "https://github.com/Fernnandez/RocketQ-nlw06#readme",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.1"
+    }
+}
