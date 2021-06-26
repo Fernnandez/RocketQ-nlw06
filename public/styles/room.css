@@ -4,7 +4,6 @@
 
 #room header {
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,14 +34,15 @@
     height: 2rem;
 }
 
+
 /* QUESTION FORM */
+
 #question-form h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 2.8rem;
     color: var(--black);
     line-height: 4.2rem;
-
     margin-bottom: 2.4rem;
 }
 
@@ -56,9 +56,7 @@
 #question-form form textarea {
     resize: none;
     background: transparent;
-
     width: 100%;
-
     outline: none;
 }
 
@@ -70,13 +68,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 #question-form form footer>div {
     display: flex;
     align-items: center;
-
     color: var(--icons-details);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -92,6 +88,7 @@
     padding: .8rem 2.4rem;
     line-height: 2.4rem;
 }
+
 
 /* QUESTIONS */
 
@@ -109,7 +106,6 @@
 .question-wrapper .question-content {
     display: flex;
     align-items: flex-start;
-
 }
 
 .question-wrapper .question-content .user {
@@ -145,6 +141,7 @@
     margin-left: 2.4rem;
 }
 
+
 /* QUESTIONS READ */
 
 .question-wrapper.read {
@@ -155,3 +152,32 @@
     background: var(--grey-blue);
 }
 
+
+/* NO QUESTIONS */
+
+.no-questions {
+    text-align: center;
+    margin-top: 5.2rem;
+}
+
+.no-questions img {
+    max-width: 100%;
+    margin-bottom: 1.2rem;
+}
+
+.no-questions p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+
+/* pegando p irmão de p */
+
+.no-questions p+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 1.3rem;
+    line-height: 1.9rem;
+}
