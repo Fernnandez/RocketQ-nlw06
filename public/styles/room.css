@@ -41,7 +41,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 2.8rem;
-    color: var(--black);
+    color: var(--titulos);
     line-height: 4.2rem;
     margin-bottom: 2.4rem;
 }
@@ -58,6 +58,7 @@
     background: transparent;
     width: 100%;
     outline: none;
+    color: var(--text);
 }
 
 #question-form form textarea::placeholder {
@@ -97,7 +98,7 @@
 }
 
 .question-wrapper {
-    background: var(--light-blue);
+    background: var(--question-bg);
     margin-bottom: .8rem;
     border-radius: 0 .8rem .8rem .8rem;
     padding: 2.4rem;
@@ -115,6 +116,7 @@
 }
 
 .question-wrapper .question-content p {
+    color: var(--titulos);
     margin-left: 1.6rem;
     word-break: break-word;
     display: flex;
@@ -126,6 +128,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.question-wrapper .actions a {
+    color: var(--titulos);
 }
 
 .question-wrapper .actions>a {
@@ -145,11 +151,17 @@
 /* QUESTIONS READ */
 
 .question-wrapper.read {
-    background: var(--grey-medium);
+    background: var(--question-read);
+    border: .2rem solid var(--border-question);
 }
 
 .question-wrapper.read .question-content .user {
     background: var(--grey-blue);
+}
+
+.question-wrapper.read .question-content p,
+.question-wrapper.read .actions a {
+    color: var(--question-read-text);
 }
 
 
@@ -158,6 +170,7 @@
 .no-questions {
     text-align: center;
     margin-top: 5.2rem;
+    color: var(--titulos);
 }
 
 .no-questions img {

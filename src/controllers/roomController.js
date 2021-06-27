@@ -41,6 +41,9 @@ module.exports = {
         const db = await Database()
             //pegando o id da room da url
         const roomId = req.params.room
+
+        // const isIncorrect = req.params.isIncorrect == "isIncorrect" ? true : false
+
         const questions = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 0`)
         const questionsRead = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 1`)
         let isNoQuestions
@@ -52,9 +55,21 @@ module.exports = {
         res.render("room", { roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions })
     },
 
-    enter(req, res) {
-        const roomId = req.body.roomId
+    async enter(req, res) {
 
-        res.redirect(`/room/${roomId}`)
+        const db = await Database()
+        let roomId = req.body.roomId
+        const roomsExistIds = await db.all(`SELECT id FROM rooms`)
+        let isRoom
+        
+        isRoom = roomsExistIds.some(roomExistId => roomExistId.id == roomId)
+        console.log(isRoom)
+        if(isRoom){
+            res.redirect(`/room/${roomId}`)
+        }else{
+            res.render("noroom")
+        }
+
+
     }
 }

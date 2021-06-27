@@ -3,7 +3,7 @@ const Database = require('../db/config')
 module.exports = {
 
 
-    async index(req, res) {
+    async action(req, res) {
         const db = await Database()
         const roomId = req.params.room
         const questionId = req.params.question
@@ -24,7 +24,9 @@ module.exports = {
             }
             res.redirect(`/room/${roomId}`)
         } else {
-            res.render('passincorrect', { roomId: roomId })
+            // isIncorrect = true
+            res.render("passincorrect",{roomId : roomId})
+            
         }
     },
 
@@ -44,5 +46,13 @@ module.exports = {
             ${roomId}
         )`)
         res.redirect(`/room/${roomId}`)
+
     }
+
+
+    // incorrectPass(req, res) {
+    //     const roomId = req.params.room
+
+    // }
+
 }

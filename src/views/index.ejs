@@ -15,15 +15,25 @@
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- SCRIPTS -->
+    <script src="/scripts/dark.js">
+    </script>
+
 </head>
 
 <body>
     <div id="home" class="content">
         <header>
             <a href="/">
-                <img src="../images/logo.svg" alt="Rocket.Q Logo" class="logo" />
+                <img src="../images/Logo.svg" alt="Rocket.Q Logo" class="logo" id="logo" />
             </a>
         </header>
+
+        <div class="toggle">
+            <input id="switch" type="checkbox" name="theme" onclick="darkMode()">
+            <label id="toggle" for="switch">Toggle</label>
+        </div>
 
         <div id="bg">
             <div class="ball top"></div>
@@ -34,7 +44,6 @@
             <div class="container">
                 <!-- Será exibido um conteúdo diferente pra cada url -->
                 <%- include(`parts/${page}`) %>
-
             </div>
         </main>
     </div>

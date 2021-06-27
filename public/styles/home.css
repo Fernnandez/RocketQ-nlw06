@@ -2,10 +2,16 @@
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 11.4rem 1fr;
-    grid-template-areas: 'header header' 'left right'
+    grid-template-areas: 'header toggle' 'left right'
 }
 
-header {
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
     grid-area: header;
 }
 
@@ -28,7 +34,7 @@ main .container {
 
 main h2 {
     font-family: 'Poppins', sans-serif;
-    color: var(--black);
+    color: var(--titulos);
     font-size: clamp(20px, 5vw, 2.8rem);
     margin-bottom: 2.4rem;
 }
@@ -84,7 +90,7 @@ button,
 
 .ball.top {
     top: -46rem;
-    width: 63.3rem;
+    width: 46.3rem;
     right: -35rem;
     height: 63.3rem;
 }
@@ -92,4 +98,50 @@ button,
 .ball.bottom {
     bottom: -15rem;
     right: 5.6rem
+}
+
+
+/*** TOGGLE DARKMODE ***/
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+    grid-area: toggle;
+}
+
+label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked+label {
+    background-color: var(--blue);
+}
+
+input:checked+label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 45px;
 }
