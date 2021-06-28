@@ -24,8 +24,7 @@ module.exports = {
             }
             res.redirect(`/room/${roomId}`)
         } else {
-            // isIncorrect = true
-            res.render("passincorrect",{roomId : roomId})
+            res.redirect(`/room/${roomId}/incorrectPassword`)
             
         }
     },

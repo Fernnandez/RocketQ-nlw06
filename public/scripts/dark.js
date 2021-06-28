@@ -20,7 +20,7 @@ function Dark() {
 function darkMode() {
     html.classList.toggle('dark');
     isDark = !isDark
-    isDark ? document.getElementById("logo").src = "../images/LogoDark.svg" : document.getElementById("logo").src = "../images/Logo.svg"
+    isDark ? document.getElementById("logo").src = "/images/LogoDark.svg" : document.getElementById("logo").src = "/images/Logo.svg"
     localStorage.setItem("isDark", isDark)
 }
 
