@@ -41,6 +41,7 @@ module.exports = {
         const db = await Database()
             //pegando o id da room da url
         const roomId = req.params.room
+        const error = req.params.error ?? false
 
         // const isIncorrect = req.params.isIncorrect == "isIncorrect" ? true : false
 
@@ -52,7 +53,7 @@ module.exports = {
                 isNoQuestions = true
             }
         }
-        res.render("room", { roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions })
+        res.render("room", { roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions, error: error })
     },
 
     async enter(req, res) {
