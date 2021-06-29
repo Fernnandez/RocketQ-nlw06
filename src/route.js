@@ -13,7 +13,6 @@ route.post('/enter-room', roomController.enter)
 
 route.post('/question/create/:room', questionController.create)
 route.post('/question/:room/:question/:action', questionController.action)
-// route.post('/question/:room',)
 
 
 module.exports = route
