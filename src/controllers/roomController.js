@@ -51,7 +51,7 @@ module.exports = {
         let isNoQuestions
         let isRoom
         isRoom = roomsExistIds.some(roomExistId => roomExistId.id == roomId)
-        if(isRoom){
+        if (isRoom) {
 
             if (questions.length == 0) {
                 if (questionsRead == 0) {
@@ -59,8 +59,8 @@ module.exports = {
                 }
             }
             res.render("room", { roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions, error: error })
-            
-        }else{
+
+        } else {
             res.render("noroom")
         }
 
@@ -72,11 +72,11 @@ module.exports = {
         let roomId = req.body.roomId
         const roomsExistIds = await db.all(`SELECT id FROM rooms`)
         let isRoom
-        
+
         isRoom = roomsExistIds.some(roomExistId => roomExistId.id == roomId)
-        if(isRoom){
+        if (isRoom) {
             res.redirect(`/room/${roomId}`)
-        }else{
+        } else {
             res.render("noroom")
         }
 

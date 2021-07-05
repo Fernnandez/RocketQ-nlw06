@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Dark()
 });
 
-function Dark() {
+function Dark() {   
     let dark = localStorage.getItem("isDark")
     let checkBox = document.getElementById("switch")
 
